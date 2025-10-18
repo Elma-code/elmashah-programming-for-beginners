@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() 
+{
+
+    int n;
+    scanf("%d", &n);
+  	int s=2*n-1;
+        for(int i=0;i<s;i++)
+        {
+            for (int j=0;j<s;j++)
+            {
+                int up=i;
+                int left=j;
+                int down= s - 1 - i;
+                int right= s - 1 - j;
+                
+                int min=up;
+                if(left<min) min=left;
+                if(down<min) min=down;
+                if(right<min) min=right;
+                printf("%d", n-min);
+                if (j<s-1) printf(" ");
+            }
+            printf("\n");
+        }
+  
+     return 0;
+}
